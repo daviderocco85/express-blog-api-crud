@@ -1,5 +1,7 @@
+import { postsList } from '../data/postsList.js';
+
 export const getAll = (req, res) => {
-    res.send(`Lista degli articoli del blog`);
+    res.json(postsList);
 };
 
 export const getById = (req, res) => {
