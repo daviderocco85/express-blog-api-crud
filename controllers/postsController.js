@@ -6,7 +6,9 @@ export const getAll = (req, res) => {
 
 export const getById = (req, res) => {
     const id = Number(req.params.id);
+
     const post = postsList.find(p => p.id === id);
+
     res.json(post);
 };
 
@@ -23,5 +25,14 @@ export const modify = (req, res) => {
 };
 
 export const deleteById = (req, res) => {
-    res.send(`Eliminazione dell'articolo del blog con id: ${req.params.id}`);
+
+    const id = Number(req.params.id);
+
+    const post = postsList.find(p => p.id === id);
+
+    postsList.splice(postsList.indexOf(post), 1);
+
+    console.log(`Post con id ${id} eliminato, nuovo lista dei Post`, postsList);
+
+    res.sendStatus(204);
 };
