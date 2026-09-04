@@ -6,5 +6,8 @@
   "author": "Davide Rocco <roccodavide85@gmail.com>",
   "type": "module",
   "main": "app.js",
-  "scripts": {}
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js"
+  }
 }
