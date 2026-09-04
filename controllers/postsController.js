@@ -1,7 +1,16 @@
 import { postsList } from '../data/postsList.js';
 
 export const getAll = (req, res) => {
-    res.json(postsList);
+
+    let postsFilteredByTag = postsList;
+
+    if (req.query.tags) {
+        postsFilteredByTag = postsList.filter(
+            p => p.tags.includes(req.query.tags)
+        );
+    }
+
+    res.json(postsFilteredByTag);
 };
 
 export const getById = (req, res) => {
