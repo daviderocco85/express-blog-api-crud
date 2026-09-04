@@ -18,6 +18,13 @@ export const getById = (req, res) => {
 
     const post = postsList.find(p => p.id === id);
 
+    if (!post) {
+        res.status(404).json({
+            error: `Articolo con id ${id} non trovato`
+        });
+        return;
+    }
+
     res.json(post);
 };
 
@@ -38,6 +45,13 @@ export const deleteById = (req, res) => {
     const id = Number(req.params.id);
 
     const post = postsList.find(p => p.id === id);
+
+    if (!post) {
+        res.status(404).json({
+            error: `Articolo con id ${id} non trovato`
+        });
+        return;
+    }
 
     postsList.splice(postsList.indexOf(post), 1);
 
