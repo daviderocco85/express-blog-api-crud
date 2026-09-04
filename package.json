@@ -1,0 +1,10 @@
+{
+  "name": "express-blog-api-crud",
+  "version": "1.0.0",
+  "description": "Express.js Blog Project with Routing and CRUD API endpoints",
+  "license": "ISC",
+  "author": "Davide Rocco <roccodavide85@gmail.com>",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {}
+}
