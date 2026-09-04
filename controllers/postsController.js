@@ -5,7 +5,9 @@ export const getAll = (req, res) => {
 };
 
 export const getById = (req, res) => {
-    res.send(`Articolo del blog con id: ${req.params.id}`)
+    const id = Number(req.params.id);
+    const post = postsList.find(p => p.id === id);
+    res.json(post);
 };
 
 export const create = (req, res) => {
