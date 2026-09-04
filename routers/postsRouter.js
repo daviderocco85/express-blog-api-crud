@@ -1,33 +1,22 @@
 import express from 'express';
+import * as postsController from '../controllers/postsController.js';
 
 export const postsRouter = express.Router();
 
 // Index di tutti gli articoli 
-postsRouter.get('/', (req, res) => {
-    res.send(`Lista degli articoli del blog`);
-});
+postsRouter.get('/', postsController.getAll);
 
 // Show dell'articolo con specifico id
-postsRouter.get('/:id', (req, res) => {
-    res.send(`Articolo del blog con id: ${req.params.id}`);
-});
+postsRouter.get('/:id', postsController.getById);
 
 // Store
-postsRouter.post('/', (req, res) => {
-    res.send(`Creazione dell'articolo del blog`);
-});
+postsRouter.post('/', postsController.create);
 
 // Update 
-postsRouter.put('/:id', (req, res) => {
-    res.send(`Aggiornamento totale dell'articolo del blog con id: ${req.params.id}`);
-});
+postsRouter.put('/:id', postsController.update);
 
 // Modify
-postsRouter.patch('/:id', (req, res) => {
-    res.send(`Aggiornamento parziale dell'articolo del blog con id: ${req.params.id}`);
-});
+postsRouter.patch('/:id', postsController.modify);
 
 // Destroy
-postsRouter.delete('/:id', (req, res) => {
-    res.send(`Eliminazione dell'articolo del blog con id: ${req.params.id}`);
-});
+postsRouter.delete('/:id', postsController.deleteById);
