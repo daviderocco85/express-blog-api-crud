@@ -31,12 +31,12 @@ API REST blog Express.js con operazioni CRUD.
 
   -  *Index — Restituire la lista dei post*
 
-       La funzione deve rispondere con l’intero array dei post in formato JSON.
+       La funzione deve rispondere con l’intero array dei post in formato **JSON**.
 
   -  *Show — Restituire un singolo post*
 
-      La funzione deve leggere l’ID dai parametri della rotta, cercare il post corrispondente, restituirlo in formato JSON e
-      rispondere con 404 se il post non esiste.
+      La funzione deve leggere l’ID dai parametri della rotta, cercare il post corrispondente, restituirlo in formato **JSON** e
+      rispondere con **404** se il post non esiste.
 
   -  *Destroy — Eliminare un post*
 
