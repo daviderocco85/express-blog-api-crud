@@ -29,6 +29,7 @@ export const getById = (req, res) => {
 };
 
 export const create = (req, res) => {
+    console.log(req.body);
     res.send(`Creazione dell'articolo del blog`);
 };
 
