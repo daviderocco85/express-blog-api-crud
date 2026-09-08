@@ -52,6 +52,21 @@ export const create = (req, res) => {
 
     const postsList = readPostsFromFile();
 
+    if (!req.body.title || !req.body.content || !req.body.image || !req.body.tags) {
+        return res.status(400).json({
+            error: "Tutti i campi (title, content, image, tags) sono obbligatori."
+        });
+    }
+
+    if (typeof req.body.title !== "string" ||
+        typeof req.body.content !== "string" ||
+        typeof req.body.image !== "string" ||
+        !Array.isArray(req.body.tags)) {
+        return res.status(400).json({
+            error: "Formato non valido: title, content e image devono essere stringhe; tags deve essere un array."
+        });
+    }
+
     const newId = postsList.at(-1).id + 1;
 
     const newPost = {
@@ -135,6 +150,12 @@ export const deleteById = (req, res) => {
     const postsList = readPostsFromFile();
 
     const id = Number(req.params.id);
+
+    if (isNaN(id)) {
+        return res.status(400).json({
+            error: "L'id deve essere un numero valido."
+        });
+    }
 
     const post = postsList.find(p => p.id === id);
 
