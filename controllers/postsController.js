@@ -21,7 +21,31 @@ export const getAll = (req, res) => {
 
     let postsFilteredByTag = postsList;
 
+    if (req.query.tags && req.query.tags.trim() === "") {
+        return res.status(400).json({
+            error: "Il parametro 'tags' non può essere vuoto."
+        });
+    }
+
+    if (Array.isArray(req.query.tags)) {
+        return res.status(400).json({
+            error: "Il parametro 'tags' deve essere una singola stringa."
+        });
+    }
+
     if (req.query.tags) {
+
+        const tag = req.query.tags;
+
+        const exists = postsList.some(p => p.tags.includes(tag));
+
+
+        if (!exists) {
+            return res.status(404).json({
+                error: `Nessun post trovato con il tag '${tag}'`
+            });
+        }
+
         postsFilteredByTag = postsList.filter(
             p => p.tags.includes(req.query.tags)
         );
