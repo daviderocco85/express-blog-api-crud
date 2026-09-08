@@ -60,6 +60,12 @@ export const getById = (req, res) => {
 
     const id = Number(req.params.id);
 
+    if (isNaN(id)) {
+        return res.status(400).json({
+            error: "L'id deve essere un numero valido."
+        });
+    }
+
     const post = postsList.find(p => p.id === id);
 
     if (!post) {
