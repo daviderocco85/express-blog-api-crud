@@ -41,7 +41,34 @@ API REST blog Express.js con operazioni CRUD.
   -  *Destroy — Eliminare un post*
 
       La funzione deve verificare che il post esista, eliminarlo dall’array, stampare in console la lista aggiornata, rispondere con **204 No Content** e restituire un **errore 404** se l’ID non è valido.
-  
+
+## Express Blog Api Crud (parte 2)
+
+## Milestone 1
+
+- **Abilitare il Body‑Parser**
+
+Per permettere all’applicazione Express di leggere correttamente il request body delle richieste in formato **JSON**, è necessario attivare il middleware `express.json()`.
+Lo stesso consente al server di interpretare i dati inviati dal client e renderli disponibili tramite `req.body`.
+All’interno della rotta `Store`è possibile verificare i dati ricevuti stampandoli nel terminale tramite `console.log(req.body)`.
+
+## Milestone 2
+
+- **Creazione di un nuovo post**
+
+Implementare la logica per aggiungere un nuovo post al blog.
+La rotta riceve i dati dal client, li valida e salva il nuovo articolo nel file `postsList.json`, restituendo una risposta **JSON** con il contenuto appena creato.
+
+- **Testare con postman**
+
+Per verificare la rotta di creazione dei post, è possibile inviare una richiesta **POST** tramite Postman e controllare che il server interpreti correttamente il body.
+
+
+## Milestone 3
+
+- **Update delle risorse**
+
+ Implementare la rotta Update, che permette di modificare completamente un post esistente.
 
 
 ## Bonus
@@ -49,4 +76,8 @@ API REST blog Express.js con operazioni CRUD.
 - Implementare un filtro di ricerca nella **Index** che   mostri solo i post che hanno un determinato **Tag**.
 
 - In **Show e Destroy**, controllare se il parametro si riferisce ad un post esistente, in caso contrario, rispondere con uno **stato 404** e un messaggio d’errore, sempre in formato **JSON**.
+
+## Bonus parte 2
+
+- In **Update**, è necessario verificare che l’ID passato nella URL corrisponda a un post realmente esistente. Se l’ID non è presente, la rotta deve rispondere con **404 Not Found** e un messaggio d’errore in formato **JSON**.
 
