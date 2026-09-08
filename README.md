@@ -48,27 +48,27 @@ API REST blog Express.js con operazioni CRUD.
 
 - **Abilitare il Body‑Parser**
 
-Per permettere all’applicazione Express di leggere correttamente il request body delle richieste in formato **JSON**, è necessario attivare il middleware `express.json()`.
-Lo stesso consente al server di interpretare i dati inviati dal client e renderli disponibili tramite `req.body`.
-All’interno della rotta `Store`è possibile verificare i dati ricevuti stampandoli nel terminale tramite `console.log(req.body)`.
+  Per permettere all’applicazione Express di leggere correttamente il request body delle richieste in formato **JSON**, è necessario attivare il middleware `express.json()`.
+  Lo stesso consente al server di interpretare i dati inviati dal client e renderli disponibili tramite `req.body`.
+  All’interno della rotta `Store`è possibile verificare i dati ricevuti stampandoli nel terminale tramite `console.log(req.body)`.
 
 ## Milestone 2
 
 - **Creazione di un nuovo post**
 
-Implementare la logica per aggiungere un nuovo post al blog.
-La rotta riceve i dati dal client, li valida e salva il nuovo articolo nel file `postsList.json`, restituendo una risposta **JSON** con il contenuto appena creato.
+  Implementare la logica per aggiungere un nuovo post al blog.
+  La rotta riceve i dati dal client, li valida e salva il nuovo articolo nel file `postsList.json`, restituendo una risposta **JSON** con il contenuto appena creato.
 
 - **Testare con postman**
 
-Per verificare la rotta di creazione dei post, è possibile inviare una richiesta **POST** tramite Postman e controllare che il server interpreti correttamente il body.
+  Per verificare la rotta di creazione dei post, è possibile inviare una richiesta **POST** tramite Postman e controllare che il server interpreti correttamente il body.
 
 
 ## Milestone 3
 
 - **Update delle risorse**
 
- Implementare la rotta Update, che permette di modificare completamente un post esistente.
+  Implementare la rotta Update, che permette di modificare completamente un post esistente.
 
 
 ## Bonus
