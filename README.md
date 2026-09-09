@@ -70,6 +70,17 @@ API REST blog Express.js con operazioni CRUD.
 
   Implementare la rotta Update, che permette di modificare completamente un post esistente.
 
+## Milestone 4
+
+- **Middleware per rotte non registrate**
+
+  Sviluppare un middleware che intercetta tutte le richieste verso endpoint inesistenti e restituisce una risposta **404 Not Found** in formato **JSON**.
+  Questo serve a garantire che il server risponda in modo chiaro e uniforme quando una rotta non è definita.
+
+- **Middleware di gestione degli errori**
+
+   Implementare un middleware che gestisce gli errori generati all’interno del server come ad esempio quelli di `runtime, throw, next(err)`, restituendo una risposta **500 Internal Server Error** con un messaggio **JSON** e centralizzando così la gestione delle eccezioni.
+
 
 ## Bonus
 
